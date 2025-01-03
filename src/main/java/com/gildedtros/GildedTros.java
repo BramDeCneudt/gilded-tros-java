@@ -1,5 +1,7 @@
 package com.gildedtros;
 
+import com.gildedtros.external.Item;
+
 class GildedTros {
     Item[] items;
 
