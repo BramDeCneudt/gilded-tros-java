@@ -1,6 +1,4 @@
-======================================
-Gilded Tros Requirements Specification
-======================================
+# Gilded Tros Requirements Specification
 
 Hi fellow adventurer, and welcome to the Gilded Tros! As you know, we are a small inn with a prime location
 near the MAS and the world famous Axxes IT Consultancy headquarters in the beautiful city of Antwerp.
