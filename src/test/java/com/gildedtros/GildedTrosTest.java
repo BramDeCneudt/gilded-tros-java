@@ -205,4 +205,49 @@ class GildedTrosTest {
         assertEquals(-2, app.items[0].sellIn);
     }
 
+    @Test
+    void Given_SmellyItemsWithPositiveSellIn_When_UpdateInQualityIsTriggered_Then_QualityShouldDecreaseBy2() {
+        String itemName = "Duplicate Code";
+
+        Item[] items = new Item[] { new Item(itemName, 5, 20) };
+        GildedTros app = new GildedTros(items);
+
+        app.updateQuality();
+
+        assertEquals(itemName, app.items[0].name);
+        assertEquals(18, app.items[0].quality);
+        assertEquals(4, app.items[0].sellIn);
+    }
+
+
+    @Test
+    void Given_SmellyItemsWithSellIn0_When_UpdateInQualityIsTriggered_Then_QualityShouldDecreaseBy2() {
+        String itemName = "Long Methods";
+
+        Item[] items = new Item[] { new Item(itemName, 0, 20) };
+        GildedTros app = new GildedTros(items);
+
+        app.updateQuality();
+
+        assertEquals(itemName, app.items[0].name);
+        assertEquals(16, app.items[0].quality);
+        assertEquals(-1, app.items[0].sellIn);
+    }
+
+    @Test
+    void Given_SmellyItemsWithNegativeSellIn_When_UpdateInQualityIsTriggered_Then_QualityShouldDecreaseBy2() {
+        String itemName = "Ugly Variable Names";
+
+        Item[] items = new Item[] { new Item(itemName, -5, 20) };
+        GildedTros app = new GildedTros(items);
+
+        app.updateQuality();
+
+        assertEquals(itemName, app.items[0].name);
+        assertEquals(16, app.items[0].quality);
+        assertEquals(-6, app.items[0].sellIn);
+    }
+
+
+
 }

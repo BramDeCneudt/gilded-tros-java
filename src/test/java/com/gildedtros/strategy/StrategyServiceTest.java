@@ -50,4 +50,14 @@ class StrategyServiceTest {
         assertEquals(BackstagePassesStrategy.class, strategy.getClass());
     }
 
+    @Test
+    void Given_AnSmellyItem_When_TriggeringGenerateStrategy_Then_GenerateStrategyShouldReturnSmellyStrategy(){
+        String itemName = "Long Methods";
+        Item item = new Item(itemName, 5, 20);
+
+        var strategy = strategyService.generateStrategy(item);
+
+        assertEquals(SmellyStrategy.class, strategy.getClass());
+    }
+
 }
